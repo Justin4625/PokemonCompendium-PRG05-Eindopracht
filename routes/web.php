@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -7,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Verplichte parameter meegeven
+// Verplichte parameter meegeven + named route
 Route::get('/contact', function() {
     $name = 'Pino';
     return view('contact', [
@@ -15,7 +16,7 @@ Route::get('/contact', function() {
     ]);
 })->name('contact');
 
-// Named Routed
+// Id meegeven
 Route::get('/products/{id}', function (string $id) {
     return view('products', ['id' => $id]);
 });
@@ -24,6 +25,8 @@ Route::get('/products/{id}', function (string $id) {
 Route::get('/user/{name?}', function (?string $name = null) {
     return $name;
 });
+
+Route::get('/about-us', [AboutUsController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
