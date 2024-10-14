@@ -1,3 +1,5 @@
 <h1>Wekom op de website!</h1>
-<h3>Log in om door te gaan</h3>
+@unless (Auth::check())
+    You are not signed in.
+@endunless
 <x-layout></x-layout>
