@@ -10,6 +10,6 @@
 * ERD gemaakt
 
 ## 14-10-2024
-* Hoofdpagina aangemaakt
-* Inlogscherm aangemaakt
-* Home pagina aangemaakt voor degene die zijn ingelogd
+* Lanceerpagina aangemaakt
+* Inloggen & registreren mogelijk
+* Gelinkt naar de pagina als de gebruiker is ingelogt
