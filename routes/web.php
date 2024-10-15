@@ -9,7 +9,8 @@ Route::get('/', function () {
     return view('launch');
 })->name('launch');
 
-Route::get('/list', [ListController::class, 'index']);
+Route::get('/list', [ListController::class, 'index'])->middleware('auth');
+Route::get('/list/{id}', [ListController::class, 'show'])->name('show')->middleware('auth');
 
 
 
