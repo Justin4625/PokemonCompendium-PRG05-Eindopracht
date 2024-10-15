@@ -8,10 +8,37 @@
     <title>Eindopdracht</title>
 </head>
 <body>
-<nav>
-    <x-nav-link href="{{ route('login') }}">Login</x-nav-link>
-    <x-nav-link href="{{ route('register') }}">Register</x-nav-link>
-</nav>
+{{--<nav>--}}
+{{--    <x-nav-link href="{{ route('login') }}">Login</x-nav-link>--}}
+{{--    <x-nav-link href="{{ route('register') }}">Register</x-nav-link>--}}
+{{--</nav>--}}
+
+@if (Route::has('login'))
+    <nav class="-mx-3 flex flex-1 justify-end">
+        @auth
+            <a>
+            <h1>Je bent ingelogd</h1>
+                    <x-nav-link href="list">List</x-nav-link>
+            </a>
+        @else
+            <a
+                href="{{ route('login') }}"
+                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+            >
+                Log in
+            </a>
+
+            @if (Route::has('register'))
+                <a
+                    href="{{ route('register') }}"
+                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                >
+                    Register
+                </a>
+            @endif
+        @endauth
+    </nav>
+@endif
 
 {{ $slot }}
 

@@ -1,12 +1,20 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ListController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('launch');
-});
+})->name('launch');
+
+Route::get('/list', [ListController::class, 'index']);
+
+
+
+
+
 
 // Verplichte parameter meegeven + named route
 Route::get('/contact', function() {
