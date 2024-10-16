@@ -17,7 +17,6 @@
     <nav class="-mx-3 flex flex-1 justify-end">
         @auth
             <a>
-            <h1>Je bent ingelogd</h1>
                     <x-nav-link href="list">List</x-nav-link>
             </a>
         @else
