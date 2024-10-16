@@ -9,12 +9,8 @@ Route::get('/', function () {
     return view('launch');
 })->name('launch');
 
-Route::get('/list', [ListController::class, 'index'])->middleware('auth');
+Route::resource('list', ListController::class)->middleware('auth');;
 Route::get('/list/{id}', [ListController::class, 'show'])->name('show')->middleware('auth');
-
-
-
-
 
 
 // Verplichte parameter meegeven + named route

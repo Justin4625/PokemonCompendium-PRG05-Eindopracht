@@ -18,4 +18,29 @@ class ListController extends Controller
         $poke = Pokemon::find($id);
         return view('show', compact('poke'));
     }
+
+    public function create()
+    {
+        return view('pokemon.create',);
+    }
+
+    public function store(Request $request)
+    {
+
+    }
+
+    public function edit(string $id)
+    {
+        //
+    }
+
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    public function destroy(string $id)
+    {
+        //
+    }
 }
