@@ -26,7 +26,11 @@ class ListController extends Controller
 
     public function store(Request $request)
     {
+        $poke = new Pokemon();
+        $poke->name = $request->input('name');
+        $poke->save();
 
+        return redirect(route('list.index'));
     }
 
     public function edit(string $id)
