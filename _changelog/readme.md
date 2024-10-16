@@ -19,3 +19,8 @@
 * Database toegevoegd
 * Pokemon tabel toegevoegd
 * Database data op de list pagina getoond
+
+## 16-10-2024
+* Create functionaliteit aangemaakt
+* Store functionaliteit aangemaakt
+* Pokemon database aangemaakt
