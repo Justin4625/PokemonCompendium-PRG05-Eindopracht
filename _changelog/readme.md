@@ -13,3 +13,9 @@
 * Lanceerpagina aangemaakt
 * Inloggen & registreren mogelijk
 * Gelinkt naar de pagina als de gebruiker is ingelogt
+
+## 15-10-2024
+* List pagina toegevoegd
+* Database toegevoegd
+* Pokemon tabel toegevoegd
+* Database data op de list pagina getoond
