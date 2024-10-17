@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('launch');
 })->name('launch');
 
-Route::resource('list', ListController::class)->middleware('auth');;
+Route::resource('list', ListController::class);
 Route::get('/list/{id}', [ListController::class, 'show'])->name('show')->middleware('auth');
 
 
