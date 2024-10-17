@@ -13,22 +13,23 @@
     <nav class="bg-gray-900 shadow-lg rounded-md p-4">
         <div class="flex justify-between items-center">
             <div class="text-2xl font-bold text-white">
-                <a href="/" class="hover:text-blue-400 transition duration-300">Pokémon Compendium</a>
+                <x-nav-link><a href="/" class="hover:text-blue-400 transition duration-300">Home</a></x-nav-link>
             </div>
-            <div class="space-x-4">
+            <div class="space-x-6">
                 @auth
-                    <x-nav-link href="list" :active="request()->routeIs('list')" class="text-gray-200 hover:text-blue-400 transition duration-300">List</x-nav-link>
+                    <x-nav-link href="list" :active="request()->routeIs('list')" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">List</x-nav-link>
                 @else
-                    <x-nav-link href="{{ route('login') }}" class="text-gray-200 hover:text-blue-400 transition duration-300">Log in</x-nav-link>
+                    <x-nav-link href="{{ route('login') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Log in</x-nav-link>
 
                     @if (Route::has('register'))
-                        <x-nav-link href="{{ route('register') }}" class="text-gray-200 hover:text-blue-400 transition duration-300">Register</x-nav-link>
+                        <x-nav-link href="{{ route('register') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Register</x-nav-link>
                     @endif
                 @endauth
             </div>
         </div>
     </nav>
 @endif
+
 
 
 <div class="container mx-auto p-8">
