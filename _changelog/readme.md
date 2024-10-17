@@ -24,3 +24,8 @@
 * Create functionaliteit aangemaakt
 * Store functionaliteit aangemaakt
 * Pokemon database aangemaakt
+
+## 17-10-2024
+* Styling toegepast
+* Authenticatie toegevoegd voor de detailpagina
+* Log out functie aangemaakt
