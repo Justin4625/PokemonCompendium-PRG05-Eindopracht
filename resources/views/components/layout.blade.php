@@ -16,9 +16,19 @@
                 <x-nav-link href="/" class="hover:text-blue-400 transition duration-300">Home</x-nav-link>
                 <x-nav-link href="list" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Pokémon Compendium</x-nav-link> <!-- Compendium link accessible for all -->
             </div>
-            <div class="space-x-6">
+            <div class="flex items-center space-x-6"> <!-- Changed to flex to align items -->
                 @auth
-                    <!-- Add any authenticated user-specific links here -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-nav-link href="{{ route('logout') }}"
+                                    class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg"
+                                    onclick="event.preventDefault();
+                             this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-nav-link>
+                    </form>
+
                 @else
                     <x-nav-link href="{{ route('login') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Log in</x-nav-link>
 
