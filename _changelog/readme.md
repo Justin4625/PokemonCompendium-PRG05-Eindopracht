@@ -29,3 +29,7 @@
 * Styling toegepast
 * Authenticatie toegevoegd voor de detailpagina
 * Log out functie aangemaakt
+
+## 18-10-2024
+* Type_id gekoppeld de naam van de type
+* Detailpagina laat nu de naam van het type zien

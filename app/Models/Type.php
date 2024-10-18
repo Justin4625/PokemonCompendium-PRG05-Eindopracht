@@ -8,8 +8,5 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Type extends Model
 {
-    public function pokemon()
-    {
-        return $this->hasMany(Pokemon::class);
-    }
+
 }
