@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class ListController extends Controller
 {
     public function index() {
-
-        $pokemon = Pokemon::all();
+        $pokemon = Pokemon::with('type')->get();
 
         return view('list', compact('pokemon'));
     }

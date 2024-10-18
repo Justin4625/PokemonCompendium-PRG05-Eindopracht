@@ -5,8 +5,16 @@
             @foreach($pokemon as $poke)
                 <li class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h2 class="text-xl text-gray-100 font-semibold">{{ $poke->name }}</h2>
-                    <p class="text-gray-300">Type: <span class="text-blue-400">{{ $poke->type_id }}</span></p>
-                    @if (Route::has('login'))
+
+                    <p class="text-gray-300">Type:
+                        @if($poke->type)
+                            <span class="text-blue-400">{{ $poke->type->name }}</span>
+                        @else
+                            <span class="text-red-400">Unknown</span>
+                        @endif
+                    </p>
+
+                @if (Route::has('login'))
                         @auth
                             <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}" class="mt-2 inline-block bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">Details</x-nav-link>
                         @else
