@@ -33,3 +33,8 @@
 ## 18-10-2024
 * Type_id gekoppeld de naam van de type
 * Detailpagina laat nu de naam van het type zien
+
+## 19-10-2024
+* Toegevoegd dat gelijk de types database wordt ingevuld bij het aanmaken
+* Create pagina aangemaakt en gekoppeld
+* Ervoor zorgt dat de create pokémon worden opgeslagen
