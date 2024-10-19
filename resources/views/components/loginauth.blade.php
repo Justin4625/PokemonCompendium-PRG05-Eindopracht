@@ -3,10 +3,11 @@
         <div class="flex justify-between items-center">
             <div class="text-2xl font-bold text-white space-x-4"> <!-- Added space-x-4 for spacing -->
                 <x-nav-link href="/" class="hover:text-blue-400 transition duration-300">Home</x-nav-link>
-                <x-nav-link href="list" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Pokémon Compendium</x-nav-link> <!-- Compendium link accessible for all -->
+                <x-nav-link href="/list" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Pokémon Compendium</x-nav-link> <!-- Compendium link accessible for all -->
             </div>
             <div class="flex items-center space-x-6"> <!-- Changed to flex to align items -->
                 @auth
+                    <x-nav-link href="{{ route('list.create') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Create</x-nav-link>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
