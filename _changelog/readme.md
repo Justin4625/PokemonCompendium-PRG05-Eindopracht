@@ -38,3 +38,6 @@
 * Toegevoegd dat gelijk de types database wordt ingevuld bij het aanmaken
 * Create pagina aangemaakt en gekoppeld
 * Ervoor zorgt dat de create pokémon worden opgeslagen
+
+## 21-10-2024
+* Formvalidatie toegevoegd

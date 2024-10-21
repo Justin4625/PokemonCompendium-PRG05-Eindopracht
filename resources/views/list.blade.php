@@ -1,4 +1,4 @@
-<x-layout></x-layout>
+<x-layout>
 
 <div class="container mx-auto p-8">
     <h1 class="text-4xl text-white font-bold mb-4 text-center">Pokémon Compendium</h1>
@@ -20,3 +20,5 @@
         @endforeach
     </ul>
 </div>
+
+</x-layout>

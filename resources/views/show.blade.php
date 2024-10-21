@@ -1,4 +1,4 @@
-<x-layout></x-layout>
+<x-layout>
 <div class="container mx-auto p-8">
     @auth
         <h1 class="text-5xl text-white font-bold mb-4 text-center">{{ $poke->name }}</h1>
@@ -17,3 +17,4 @@
         </div>
     @endauth
 </div>
+</x-layout>
