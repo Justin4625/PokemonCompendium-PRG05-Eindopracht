@@ -47,14 +47,22 @@ class ListController extends Controller
 
     public function edit(string $id)
     {
+        $types = Type::all();
         $poke = Pokemon::findOrFail($id);
-        return view('list.edit', compact('poke'));
+        return view('list.edit', ['types' => $types], compact('poke') );
     }
 
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Request $request, $id) {
+        $poke = Pokemon::findOrFail($id);
+
+        $poke->name = $request->input('name');
+        $poke->type_id = $request->input('type_id');
+        $poke->region = $request->input('region');
+        $poke->save();
+
+        return redirect(route('list.index'));
     }
+
 
     public function destroy(string $id)
     {
