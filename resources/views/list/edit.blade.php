@@ -17,7 +17,6 @@
                         @enderror
                     </div>
 
-
                     <div class="mb-4">
                         <label for="type_id" class="block text-gray-300 font-semibold">Type:</label>
                         <select id="type_id" name="type_id" required class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md">
@@ -43,9 +42,11 @@
                         </select>
                     </div>
 
-
-                    <div class="text-center">
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-600">
+                    <div class="flex justify-center mb-4">
+                        <a href="{{ route('list.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-600 h-full inline-flex items-center">
+                            Back to List
+                        </a>
+                        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-green-600 h-full inline-flex items-center ml-4">
                             Save
                         </button>
                     </div>
