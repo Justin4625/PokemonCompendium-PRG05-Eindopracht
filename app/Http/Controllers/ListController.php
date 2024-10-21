@@ -53,6 +53,13 @@ class ListController extends Controller
     }
 
     public function update(Request $request, $id) {
+        $validated = $request->validate([
+            'name' => 'required|unique:pokemon,name',
+        ],
+            ['name.required' => 'A name is required',
+                'name.unique' => 'This Pokémon already exists']
+        );
+
         $poke = Pokemon::findOrFail($id);
 
         $poke->name = $request->input('name');
