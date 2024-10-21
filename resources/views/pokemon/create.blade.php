@@ -20,6 +20,7 @@
                     <div class="mb-4">
                         <label for="type_id" class="block text-gray-300 font-semibold">Type:</label>
                         <select id="type_id" name="type_id" required class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md">
+                            <option value="" disabled selected>Select a type</option>
                             @foreach ($types as $type)
                                 <option value="{{ $type->id }}">{{ $type->name }}</option>
                             @endforeach
@@ -28,8 +29,21 @@
 
                     <div class="mb-4">
                         <label for="region" class="block text-gray-300 font-semibold">Region:</label>
-                        <input type="text" id="region" name="region" required class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md"/>
+                        <select id="region" name="region" required class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md">
+                            <option value="" disabled selected>Select a region</option>
+                            <option value="kanto">Kanto</option>
+                            <option value="johto">Johto</option>
+                            <option value="hoenn">Hoenn</option>
+                            <option value="sinnoh">Sinnoh</option>
+                            <option value="unova">Unova</option>
+                            <option value="kalos">Kalos</option>
+                            <option value="alola">Alola</option>
+                            <option value="galar">Galar</option>
+                            <option value="hisui">Hisui</option>
+                            <option value="paldea">Paldea</option>
+                        </select>
                     </div>
+
 
                     <div class="text-center">
                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-600">
