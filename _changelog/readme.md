@@ -40,4 +40,7 @@
 * Ervoor zorgt dat de create pokémon worden opgeslagen
 
 ## 21-10-2024
-* Formvalidatie toegevoegd
+* Formvalidatie voor create toegevoegd
+* Editpagina aangemaakt
+* Formvalidatie voor edit toegevoegd
+* Destroy functie toegevoegd
