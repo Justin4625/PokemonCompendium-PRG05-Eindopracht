@@ -10,7 +10,12 @@
                     <div class="mb-4">
                         <label for="name" class="block text-gray-300 font-semibold">Name:</label>
                         <input type="text" id="name" name="name" required class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md"/>
+
+                        @error('name')
+                        <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
+
 
                     <div class="mb-4">
                         <label for="type_id" class="block text-gray-300 font-semibold">Type:</label>

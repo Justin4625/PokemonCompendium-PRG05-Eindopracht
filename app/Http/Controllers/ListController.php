@@ -27,9 +27,17 @@ class ListController extends Controller
 
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'name' => 'required|unique:pokemon,name',
+        ],
+            ['name.required' => 'A name is required',
+                'name.unique' => 'This Pokémon already exists']
+        );
+
         $poke = new Pokemon();
         $poke->name = $request->input('name');
-        $poke->type_id = $request->input('type_id'); // Type_id wordt nu correct ingevuld
+        $poke->type_id = $request->input('type_id');
         $poke->region = $request->input('region');
         $poke->save();
 
