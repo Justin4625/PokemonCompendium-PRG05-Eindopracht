@@ -10,9 +10,15 @@
                 <a href="{{ route('list.index') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">
                     Back to List
                 </a>
+
                 <a href="{{ route('list.edit', $poke->id) }}" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition duration-300 ml-4">
                     Edit
                 </a>
+
+                <a href="{{ route('list.destroy', $poke->id) }}" class="inline-block bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-300 ml-4">
+                    Delete
+                </a>
+
             </div>
         @else
             <div class="bg-red-500 text-white p-4 rounded-lg text-center">
