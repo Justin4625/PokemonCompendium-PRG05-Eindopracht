@@ -73,6 +73,9 @@ class ListController extends Controller
 
     public function destroy(string $id)
     {
+        $poke = Pokemon::find($id);
+        $poke->delete();
 
+        return redirect(route('list.index'));
     }
 }

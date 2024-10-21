@@ -15,9 +15,13 @@
                     Edit
                 </a>
 
-                <a href="{{ route('list.destroy', $poke->id) }}" class="inline-block bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-300 ml-4">
-                    Delete
-                </a>
+                <form action="{{ route('list.destroy', $poke->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="inline-block bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-300 ml-4">
+                        Delete
+                    </button>
+                </form>
 
             </div>
         @else
