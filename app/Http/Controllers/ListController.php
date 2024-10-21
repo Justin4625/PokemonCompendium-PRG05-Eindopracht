@@ -47,7 +47,8 @@ class ListController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $poke = Pokemon::findOrFail($id);
+        return view('list.edit', compact('poke'));
     }
 
     public function update(Request $request, string $id)
