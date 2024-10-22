@@ -11,10 +11,6 @@
                     <div class="mb-4">
                         <label for="name" class="block text-gray-300 font-semibold">Name:</label>
                         <input type="text" id="name" name="name" value="{{ $poke->name }}" required class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md"/>
-
-                        @error('name')
-                        <div style="color: red;">{{ $message }}</div>
-                        @enderror
                     </div>
 
                     <div class="mb-4">
@@ -53,7 +49,7 @@
                 </form>
             @else
                 <div class="bg-red-500 text-white p-4 rounded-lg text-center">
-                    You need to log in to create.
+                    You need to log in to edit.
                 </div>
             @endauth
         @endif
