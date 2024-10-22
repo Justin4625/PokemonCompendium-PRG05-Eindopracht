@@ -9,7 +9,7 @@
 
                 @if (Route::has('login'))
                     @auth
-                        <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}" class="mt-2 inline-block bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">Details</x-nav-link>
+                        <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}" class="mt-2 inline-block bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">≡ Details</x-nav-link>
                     @else
                         <p class="mt-2 text-center text-red-500 bg-gray-700 p-2 rounded-md">
                             Log in to see details

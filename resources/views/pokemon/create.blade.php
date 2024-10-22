@@ -46,8 +46,8 @@
 
 
                     <div class="text-center">
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-600">
-                            Save
+                        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-green-600">
+                            ✓ Save
                         </button>
                     </div>
                 </form>

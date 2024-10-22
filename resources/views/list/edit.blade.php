@@ -43,7 +43,7 @@
                             ← Back to List
                         </a>
                         <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-green-600 h-full inline-flex items-center ml-4">
-                            Save
+                            ✓ Save
                         </button>
                     </div>
                 </form>
