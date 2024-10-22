@@ -12,6 +12,10 @@
             <li class="bg-gray-800 p-4 rounded-lg shadow-lg">
                 <h2 class="text-xl text-gray-100 font-semibold">{{ $poke->name }}</h2>
 
+                @if(auth()->check() && auth()->user()->is_admin)
+                <p class="text-gray-100">{{ $poke->created_at }}</p>
+                @endif
+
                 @if (Route::has('login'))
                     @auth
                         <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}" class="mt-2 inline-block bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">≡ Details</x-nav-link>

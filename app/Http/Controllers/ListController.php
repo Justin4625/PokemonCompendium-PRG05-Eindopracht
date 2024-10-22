@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ListController extends Controller
 {
     public function index() {
-        $pokemon = Pokemon::with('type')->get();
+        $pokemon = Pokemon::orderBy('created_at', 'desc')->with('type')->get();
 
         return view('list', compact('pokemon'));
     }
