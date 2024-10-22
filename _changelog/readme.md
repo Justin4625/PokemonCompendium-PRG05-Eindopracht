@@ -44,3 +44,8 @@
 * Editpagina aangemaakt
 * Formvalidatie voor edit toegevoegd
 * Destroy functie toegevoegd
+
+## 22-10-2024
+* Admin toegevoegd aan de database
+* Scheiding gemaakt tussen admin en user
+* Visible schakel systeem aangemaakt voor de adminpagina
