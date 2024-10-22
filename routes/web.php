@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,7 @@ Route::get('/', function () {
 
 Route::resource('list', ListController::class);
 Route::get('/list/{id}', [ListController::class, 'show'])->name('show')->middleware('auth');
+Route::post('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
 
 
 // Verplichte parameter meegeven + named route
