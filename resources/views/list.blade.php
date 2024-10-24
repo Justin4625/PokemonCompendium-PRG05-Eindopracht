@@ -5,6 +5,7 @@
         <h1 class="text-4xl text-white font-bold mb-4 text-center">Pokémon Compendium - Admin Account</h1>
     @else
     <h1 class="text-4xl text-white font-bold mb-4 text-center">Pokémon Compendium</h1>
+        <x-search></x-search>
     @endif
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach($pokemon as $poke)
