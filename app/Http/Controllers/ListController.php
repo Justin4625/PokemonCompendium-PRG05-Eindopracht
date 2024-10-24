@@ -10,7 +10,6 @@ class ListController extends Controller
 {
     public function index() {
         $pokemon = Pokemon::orderBy('created_at', 'desc')->with('type')->get();
-
         return view('list', compact('pokemon'));
     }
 
@@ -40,6 +39,8 @@ class ListController extends Controller
         $poke->type_id = $request->input('type_id');
         $poke->region = $request->input('region');
         $poke->save();
+
+        session()->flash('success', 'Pokémon created successfully! The Pokémon is now being reviewed by the admin.');
 
         return redirect(route('list.index'));
     }

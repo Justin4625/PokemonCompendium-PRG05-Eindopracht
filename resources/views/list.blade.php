@@ -1,6 +1,12 @@
 <x-layout>
 
     <div class="container mx-auto p-8">
+        @if(session('success'))
+            <div class="bg-green-500 text-white p-4 rounded-lg mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
         @if(auth()->check() && auth()->user()->is_admin)
             <h1 class="text-4xl text-white font-bold mb-4 text-center">Pokémon Compendium - Admin Account</h1>
         @else

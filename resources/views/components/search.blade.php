@@ -8,7 +8,7 @@
             <option value="sinnoh" {{ request('region') === 'sinnoh' ? 'selected' : '' }}>Sinnoh</option>
             <option value="unova" {{ request('region') === 'unova' ? 'selected' : '' }}>Unova</option>
             <option value="kalos" {{ request('region') === 'kalos' ? 'selected' : '' }}>Kalos</option>
-            <option value="alola" {{ request('region') === 'alola' ? 'selected' : '' }}>Alola</option>
+            <option value="Alola" {{ request('region') === 'Alola' ? 'selected' : '' }}>Alola</option>
             <option value="galar" {{ request('region') === 'galar' ? 'selected' : '' }}>Galar</option>
             <option value="hisui" {{ request('region') === 'hisui' ? 'selected' : '' }}>Hisui</option>
             <option value="paldea" {{ request('region') === 'paldea' ? 'selected' : '' }}>Paldea</option>
