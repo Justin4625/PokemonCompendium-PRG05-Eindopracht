@@ -27,10 +27,11 @@
 
                         @if (Route::has('login'))
                             @auth
-                                <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}"
-                                            class="mt-2 inline-block bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">
-                                    ≡ Details
-                                </x-nav-link>
+
+                                    <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}"
+                                                class="mt-2 inline-block bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">
+                                        ≡ Details
+                                    </x-nav-link>
 
                                 @if(auth()->check() && auth()->user()->is_admin)
                                     <form action="{{ route('admin.update', $poke->id) }}" method="POST"

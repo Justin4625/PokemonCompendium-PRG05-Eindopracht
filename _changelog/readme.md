@@ -49,3 +49,8 @@
 * Admin toegevoegd aan de database
 * Scheiding gemaakt tussen admin en user
 * Visible schakel systeem aangemaakt voor de adminpagina
+
+## 24-10-2024
+* Zoekbalk toegevoegd
+* Filteren op regio toegepast
+* Melding aangemaakt na het aanmaken van een pokémon
