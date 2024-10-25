@@ -54,3 +54,9 @@
 * Zoekbalk toegevoegd
 * Filteren op regio toegepast
 * Melding aangemaakt na het aanmaken van een pokémon
+
+## 25-10-2024
+* user_id toegevoegd aan de pokemon database
+* Wordt nu getoond welke user de pokémon heeft gecreate
+* De user kan zijn eigen pokémon editen en deleten, de andere users niet. De admin kan dat nog wel
+* Authenticatie chechs toegevoegd in de ListController
