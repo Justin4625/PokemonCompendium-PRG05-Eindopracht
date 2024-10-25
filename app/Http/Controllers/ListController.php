@@ -49,9 +49,15 @@ class ListController extends Controller
 
     public function edit(string $id)
     {
-        $types = Type::all();
         $poke = Pokemon::findOrFail($id);
-        return view('list.edit', ['types' => $types], compact('poke') );
+
+        // Only allow if user is the creator or admin
+        if (auth()->user()->id !== $poke->user_id && !auth()->user()->is_admin) {
+            return redirect()->route('list.index')->with('error', 'You do not have permission to edit this Pokémon.');
+        }
+
+        $types = Type::all();
+        return view('list.edit', ['types' => $types], compact('poke'));
     }
 
     public function update(Request $request, $id) {
@@ -72,9 +78,15 @@ class ListController extends Controller
 
     public function destroy(string $id)
     {
-        $poke = Pokemon::find($id);
+        $poke = Pokemon::findOrFail($id);
+
+        // Only allow if user is the creator or admin
+        if (auth()->user()->id !== $poke->user_id && !auth()->user()->is_admin) {
+            return redirect()->route('list.index')->with('error', 'You do not have permission to delete this Pokémon.');
+        }
+
         $poke->delete();
 
-        return redirect(route('list.index'));
+        return redirect()->route('list.index')->with('success', 'Pokémon deleted successfully.');
     }
 }
