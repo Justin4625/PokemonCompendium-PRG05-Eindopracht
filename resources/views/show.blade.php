@@ -12,6 +12,7 @@
                     ← Back to List
                 </a>
 
+                @if(auth()->check() && (auth()->user()->id === $poke->user_id || auth()->user()->is_admin))
                 <a href="{{ route('list.edit', $poke->id) }}" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition duration-300 ml-4">
                     ✎ Edit
                 </a>
@@ -23,7 +24,7 @@
                         ⊗ Delete
                     </button>
                 </form>
-
+                @endif
             </div>
         @else
             <div class="bg-red-500 text-white p-4 rounded-lg text-center">
