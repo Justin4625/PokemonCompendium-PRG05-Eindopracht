@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 class ListController extends Controller
 {
     public function index() {
-        $pokemon = Pokemon::orderBy('created_at', 'desc')->with('type')->get();
+        $pokemon = Pokemon::orderBy('created_at', 'desc')->with('user')->with('type')->get();
         return view('list', compact('pokemon'));
     }
 
     public function show($id) {
-        $poke = Pokemon::find($id);
+        $poke = Pokemon::with('user')->find($id); // Eager load the user relationship
         return view('show', compact('poke'));
     }
 
@@ -38,6 +38,7 @@ class ListController extends Controller
         $poke->name = $request->input('name');
         $poke->type_id = $request->input('type_id');
         $poke->region = $request->input('region');
+        $poke->user_id = auth()->user()->id;
         $poke->save();
 
         session()->flash('success', 'Pokémon created successfully! The Pokémon is now being reviewed by the admin.');

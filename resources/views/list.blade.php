@@ -20,9 +20,10 @@
                 @if($poke->is_visible == 1 || (auth()->check() && auth()->user()->is_admin))
                     <li class="bg-gray-800 p-4 rounded-lg shadow-lg">
                         <h2 class="text-xl text-gray-100 font-semibold">{{ $poke->name }}</h2>
-
                         @if(auth()->check() && auth()->user()->is_admin)
                             <p class="text-gray-100">{{ $poke->created_at }}</p>
+                            <p class="text-gray-100">Created by: {{ $poke->user->name }}</p>
+
                         @endif
 
                         @if (Route::has('login'))
