@@ -15,6 +15,7 @@
 4. **Als admin** wil ik de optie hebben om elke Pokémon te kunnen verwijderen van elke gebruiker, zodat er geen ongepaste Pokémon op de website belanden.
 
 # ERD
+![ERD](/img/erd.png)
 
 # Changelog Laravel Project
 
