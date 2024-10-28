@@ -36,13 +36,14 @@
             </x-primary-button>
 
             @if (session('status') === 'password-updated')
-                <p
+                <div
                     x-data="{ show: true }"
                     x-show="show"
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-400"
-                >{{ __('Saved.') }}</p>
+                    class="text-sm text-gray-400 focus:outline-none"
+                >{{ __('Saved.') }}</div>
+
             @endif
         </div>
     </form>
