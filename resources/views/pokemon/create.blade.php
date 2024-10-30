@@ -2,7 +2,7 @@
     <div class="container mx-auto p-8">
         <h1 class="text-4xl text-white font-bold mb-6 text-center">Add a Pokémon</h1>
 
-        @if (Route::has('login'))
+        @if (Route::has('login') && auth()->user()->likesCount() >= 5 || auth()->user()->is_admin)
             @auth
                 <form action="{{ url(route('list.store')) }}" method="POST" class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md mx-auto">
                     @csrf
