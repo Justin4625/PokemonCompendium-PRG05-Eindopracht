@@ -19,6 +19,10 @@
 
 # Changelog Laravel Project
 
+## 30-10-2024
+* Like functie toegevoegd
+* Diepere validatie toegevoegd, pas vanaf 5 likes kun je nu Pokémon create
+
 ## 28-10-2024
 * Profile pagina gekoppeld aan de site
 * Styling aangepast van de profile pagina
