@@ -16,8 +16,8 @@ class LikeController extends Controller
             $user->likedPokemon()->attach($pokemonId);
             $likesCount = $user->likesCount();
 
-            if ($likesCount >= 5) {
-                return back()->with('success', 'You have liked 5 Pokémon!');
+            if ($likesCount == 5) {
+                return back()->with('success', 'You have liked 5 Pokémon! You have now acces to Create Pokémon!');
             } else {
                 return back()->with('success', 'You liked this Pokémon! Total likes: ' . $likesCount);
             }
