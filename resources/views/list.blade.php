@@ -28,10 +28,14 @@
                         @endif
 
                         <div class="flex justify-between mt-4">
-                            <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}"
-                                        class="bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">
-                                ≡ Details
-                            </x-nav-link>
+                            @auth
+                                <x-nav-link href="{{ route('show', ['id' => $poke->id]) }}"
+                                            class="bg-blue-500 text-white px-4 py-1 rounded-md transition duration-300 transform hover:bg-blue-600 hover:scale-105">
+                                    ≡ Details
+                                </x-nav-link>
+                            @else
+                                <p class="text-red-500">Log in to see details</p>
+                            @endauth
 
                             @auth
                                 <button
