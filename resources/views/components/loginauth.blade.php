@@ -4,10 +4,18 @@
             <div class="text-2xl font-bold text-white space-x-4">
                 <x-nav-link href="/" class="hover:text-blue-400 transition duration-300">Home</x-nav-link>
                 <x-nav-link href="/list" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Pokémon Compendium</x-nav-link>
+
                 @auth
-                    <x-nav-link href="{{ route('list.create') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Create</x-nav-link>
+                    @if(auth()->user()->likesCount() >= 5 || auth()->user()->is_admin)
+                        <x-nav-link href="{{ route('list.create') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Create</x-nav-link>
+                    @else
+                        <span class="text-gray-500 cursor-not-allowed text-lg">
+                            Create Pokémon (Requires at least 5 likes)
+                        </span>
+                    @endif
                 @endauth
             </div>
+
             <div class="flex items-center space-x-6">
                 @auth
                     <x-nav-link href="{{ route('profile.edit') }}" class="text-gray-300 hover:text-blue-400 transition duration-300 text-lg">Profile</x-nav-link>

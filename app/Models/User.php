@@ -46,7 +46,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function likedPokemon() {
-        return $this->belongsToMany(Pokemon::class, 'likes');
+    public function likedPokemon()
+    {
+        return $this->belongsToMany(Pokemon::class, 'likes')->withTimestamps();
+    }
+
+    public function likesCount()
+    {
+        return $this->likedPokemon()->count();
     }
 }

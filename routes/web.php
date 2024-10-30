@@ -20,6 +20,16 @@ Route::get('/pokemon', [SearchController::class, 'index'])->name('list.index');
 
 Route::post('/pokemon/{id}/like', [LikeController::class, 'toggleLike'])->name('toggle.like');
 
+Route::get('/create', function () {
+    $user = auth()->user();
+
+    if ($user->likesCount() < 5) {
+        return redirect()->route('list.index')->with('error', 'You must like at least 5 Pokémon to access this page.');
+    }
+
+    return view('pokemon.create'); // Replace with your actual create page view
+})->name('create');
+
 
 // Verplichte parameter meegeven + named route
 Route::get('/contact', function() {
