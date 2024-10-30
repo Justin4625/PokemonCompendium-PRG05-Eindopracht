@@ -6,6 +6,6 @@
 @endunless
 
     @if(auth()->check() && auth()->user()->is_admin)
-        <h1>Admin Account</h1>
+        <h1 class="text-3xl text-white font-bold mb-6 text-center">Admin Account</h1>
     @endif
 </x-layout>

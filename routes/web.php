@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -17,6 +18,7 @@ Route::post('/admin/{id}', [AdminController::class, 'update'])->name('admin.upda
 
 Route::get('/pokemon', [SearchController::class, 'index'])->name('list.index');
 
+Route::post('/pokemon/{id}/like', [LikeController::class, 'toggleLike'])->name('toggle.like');
 
 
 // Verplichte parameter meegeven + named route
