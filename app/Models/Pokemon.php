@@ -18,8 +18,4 @@ class Pokemon extends Model
     {
         return $this->belongsTo(Type::class);
     }
-
-    public function likedByUsers() {
-        return $this->belongsToMany(User::class, 'likes');
-    }
 }

@@ -16,7 +16,7 @@
     </label>
 
     <div class="relative flex-grow">
-        <label for="search-query" class="sr-only">Search Pokémon</label> <!-- Visually hidden label -->
+        <label for="search-query" class="sr-only">Search Pokémon</label>
         <input
             type="text"
             id="search-query"

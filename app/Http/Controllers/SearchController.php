@@ -12,7 +12,6 @@ class SearchController extends Controller
         $query = $request->input('query');
         $region = $request->input('region');
 
-        // Start met het opbouwen van de query voor de Pokémon
         $pokemon = Pokemon::query();
 
         // Filter op naam als er een zoekopdracht is ingevoerd

@@ -14,13 +14,13 @@ class ListController extends Controller
     }
 
     public function show($id) {
-        $poke = Pokemon::with('user')->find($id); // Eager load the user relationship
+        $poke = Pokemon::with('user')->find($id);
         return view('show', compact('poke'));
     }
 
     public function create()
     {
-        $types = Type::all(); // Haal alle types op uit de database
+        $types = Type::all();
         return view('pokemon.create', ['types' => $types]);
     }
 
@@ -51,7 +51,6 @@ class ListController extends Controller
     {
         $poke = Pokemon::findOrFail($id);
 
-        // Only allow if user is the creator or admin
         if (auth()->user()->id !== $poke->user_id && !auth()->user()->is_admin) {
             return redirect()->route('list.index')->with('error', 'You do not have permission to edit this Pokémon.');
         }
@@ -80,7 +79,6 @@ class ListController extends Controller
     {
         $poke = Pokemon::findOrFail($id);
 
-        // Only allow if user is the creator or admin
         if (auth()->user()->id !== $poke->user_id && !auth()->user()->is_admin) {
             return redirect()->route('list.index')->with('error', 'You do not have permission to delete this Pokémon.');
         }

@@ -12,7 +12,6 @@ class AdminController extends Controller
         $poke->is_visible = ($request->input('vis') === 'on') ? 1 : 0;
         $poke->save();
 
-        // Terugsturen naar de index met de gesorteerde lijst
         return redirect()->route('list.index');
     }
 }

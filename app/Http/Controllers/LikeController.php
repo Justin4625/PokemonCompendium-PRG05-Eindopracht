@@ -12,14 +12,13 @@ class LikeController extends Controller
         $pokemon = Pokemon::findOrFail($pokemonId);
         $user = auth()->user();
 
+        // checken of de user een specifieke pokémon al heeft geliked
         if (!$user->likedPokemon()->where('pokemon_id', $pokemonId)->exists()) {
             $user->likedPokemon()->attach($pokemonId);
             $likesCount = $user->likesCount();
 
             if ($likesCount == 5) {
                 return back()->with('success', 'You have liked 5 Pokémon! You have now acces to Create Pokémon!');
-            } else {
-                return back()->with('success', 'You liked this Pokémon! Total likes: ' . $likesCount);
             }
         }
         return back();
